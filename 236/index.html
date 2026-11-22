@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sizzle Shack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark">🍳</div>
+          <div>
+            <p>Welcome to</p>
+            <h1>Sizzle Shack</h1>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="stat-icon">🏆</span><span id="score">0</span></div>
+          <div class="stat"><span class="stat-icon">🔥</span><span id="streak">0</span></div>
+          <div class="stat hearts" id="hearts" aria-label="Lives">❤️ ❤️ ❤️</div>
+        </div>
+      </header>
+
+      <section class="kitchen">
+        <aside class="order-panel">
+          <div class="panel-title">
+            <span>ORDERS</span>
+            <span class="ticket-count" id="ticketCount">1</span>
+          </div>
+          <div id="orderList" class="order-list"></div>
+        </aside>
+
+        <div class="prep-area">
+          <div class="clock">
+            <span class="clock-icon">⏱</span>
+            <span id="timeLeft">90</span>
+          </div>
+
+          <div class="counter">
+            <div class="tile top-left"></div>
+            <div class="tile top-right"></div>
+            <div class="shelf">
+              <div class="shelf-sign">FRESH INGREDIENTS</div>
+              <div class="ingredient-grid" id="ingredientGrid"></div>
+            </div>
+
+            <div class="prep-board">
+              <div class="board-label">YOUR PLATE</div>
+              <div id="plate" class="plate">
+                <div class="plate-shine"></div>
+                <div id="plateIngredients" class="plate-ingredients"></div>
+              </div>
+              <button id="clearPlate" class="clear-button" type="button">Clear</button>
+            </div>
+
+            <div class="cooking-station">
+              <div class="stove">
+                <div class="burner"></div>
+                <div id="pan" class="pan">
+                  <div class="pan-food" id="panFood"></div>
+                  <div class="pan-steam" id="panSteam">〰</div>
+                </div>
+              </div>
+              <button id="cookButton" class="cook-button" type="button">
+                <span>COOK</span>
+              </button>
+            </div>
+          </div>
+
+          <button id="serveButton" class="serve-button" type="button">
+            <span class="tray-icon">🍽</span>
+            <span>SERVE ORDER</span>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status"></div>
+
+    <div id="startScreen" class="overlay">
+      <div class="modal start-modal">
+        <div class="chef">👨‍🍳</div>
+        <p class="eyebrow">The lunch rush is on!</p>
+        <h2>Can you handle<br />the heat?</h2>
+        <p class="instructions">Add ingredients to your plate, cook for 3 seconds, then serve the matching order.</p>
+        <button id="startButton" class="start-button" type="button">START SHIFT</button>
+      </div>
+    </div>
+
+    <div id="gameOverScreen" class="overlay hidden">
+      <div class="modal">
+        <div class="chef" id="resultIcon">🏆</div>
+        <p class="eyebrow">Shift complete</p>
+        <h2 id="resultTitle">Great service!</h2>
+        <div class="final-score">Score: <strong id="finalScore">0</strong></div>
+        <button id="restartButton" class="start-button" type="button">PLAY AGAIN</button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
